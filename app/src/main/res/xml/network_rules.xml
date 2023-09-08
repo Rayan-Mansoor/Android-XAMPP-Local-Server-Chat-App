@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">192.168.18.10</domain>
+        <!-- Add more domains or IP addresses as needed -->
+    </domain-config>
+</network-security-config>
