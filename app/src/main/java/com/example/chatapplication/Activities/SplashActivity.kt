@@ -33,9 +33,23 @@ class SplashActivity : AppCompatActivity() {
 
 
         checkServerConnectivity()
+
+        binding.closeApp.setOnClickListener{
+            finish()
+        }
+
+        binding.conn.setOnClickListener{
+            val newIP = binding.ipET.text.toString()
+            progressDialog = ProgressDialog(this)
+            progressDialog.setTitle("Checking Connection TO XAMPP Server ${newIP}" )
+            progressDialog.show()
+            RetrofitClient.BASE_URL = "http://${newIP}/chat_app_php_files/"
+            checkServerConnectivity()
+        }
     }
 
     private fun checkServerConnectivity(){
+        Log.e("SplashActivity", "Check Server")
         val apiService = RetrofitClient.apiService
         val call = apiService.connect()
 
@@ -55,11 +69,10 @@ class SplashActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext,response.body()!!.message, Toast.LENGTH_SHORT).show()
                     progressDialog.dismiss()
 
+                    binding.ipET.visibility = View.VISIBLE
+                    binding.conn.visibility = View.VISIBLE
                     binding.closeApp.visibility = View.VISIBLE
 
-                    binding.closeApp.setOnClickListener{
-                        finish()
-                    }
 
                 }
             }
@@ -69,6 +82,8 @@ class SplashActivity : AppCompatActivity() {
 
                 progressDialog.dismiss()
 
+                binding.ipET.visibility = View.VISIBLE
+                binding.conn.visibility = View.VISIBLE
                 binding.closeApp.visibility = View.VISIBLE
 
                 binding.closeApp.setOnClickListener{

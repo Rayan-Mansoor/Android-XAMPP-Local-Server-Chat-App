@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "http://192.168.18.10/chat_app_php_files/" // Replace with your server's IP and directory
+    var BASE_URL = "http://192.168.18.10/chat_app_php_files/" // Replace with your server's IP and directory
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
