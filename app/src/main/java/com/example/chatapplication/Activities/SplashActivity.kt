@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
 
 
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Checking Connection TO XAMPP Server")
+        progressDialog.setTitle("Checking Connection TO XAMPP Server 192.168.18.10")
         progressDialog.show()
 
 
