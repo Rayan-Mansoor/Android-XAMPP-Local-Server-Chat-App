@@ -1,5 +1,5 @@
 # Android_Local_Server_Chat_App
-An Local Server Chat App that uses XAMPP (Authorization + database) as backend
+A Local Server Chat App that uses XAMPP (Authorization + database) as backend
 
 STEP BY STEP GUIDE :
 
